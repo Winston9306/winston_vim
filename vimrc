@@ -22,7 +22,9 @@ set ignorecase
 syntax enable
 syntax on                    " 开启文件类型侦测
 filetype plugin indent on    " 启用自动补全
-set tags=./tags;,tags
+set tags=./tags;,tags        " tag设置向上搜索
+" svn blame选中行 映射按键
+vmap bl :<C-U>!svn blame <C-R>=expand("%p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p<CR>
 
 " use astyle to auto format cpp/h files
 map <F5> :call CodeFormat()<CR>
