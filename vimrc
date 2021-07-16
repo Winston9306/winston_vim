@@ -17,6 +17,10 @@ let mapleader=";"
 
 " 开启实时搜索
 set incsearch
+" 设置vim搜索选中的颜色
+set hlsearch
+hi Search ctermbg=LightYellow
+hi Search ctermfg=Red
 " 搜索时大小写不敏感
 set ignorecase
 syntax enable
